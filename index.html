@@ -10,21 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#07142e; --bg2:#0e2349; --ink:#e9f2ff; --mute:#8fa9d6;
-  --pink:#3d8bff; --cyan:#5eeaff; --line:rgba(110,170,255,.2);
+  --bg:#030305; --bg2:#0b0b12; --ink:#f5f3ff; --mute:#aaa6bd;
+  --pink:#b56cff; --cyan:#65e6ff; --line:rgba(181,108,255,.24);
   --display:'Syne','Trebuchet MS',sans-serif; --body:'DM Sans',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.65;overflow-x:hidden}
+body{background:
+  radial-gradient(circle at 15% 20%,rgba(96,43,160,.14),transparent 28%),
+  radial-gradient(circle at 85% 75%,rgba(16,104,145,.1),transparent 25%),
+  var(--bg);color:var(--ink);font-family:var(--body);line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 #bg{position:fixed;inset:0;z-index:0}
 #glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;
-  background:radial-gradient(circle,rgba(61,139,255,.16),transparent 65%);transform:translate(-50%,-50%);left:50%;top:50%}
+  background:radial-gradient(circle,rgba(181,108,255,.14),transparent 65%);transform:translate(-50%,-50%);left:50%;top:50%}
 main,nav,footer{position:relative;z-index:1}
 nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
-  padding:18px clamp(20px,5vw,64px);backdrop-filter:blur(12px);background:rgba(7,20,46,.65);border-bottom:1px solid var(--line);z-index:5}
+  padding:18px clamp(20px,5vw,64px);backdrop-filter:blur(12px);background:rgba(3,3,5,.72);border-bottom:1px solid var(--line);z-index:5}
 .logo{font-family:var(--display);font-weight:800;font-size:1.2rem}
 .logo b{color:var(--pink)}
 nav ul{display:flex;gap:28px;list-style:none}
@@ -37,7 +40,7 @@ h2{font-family:var(--display);font-size:clamp(2rem,5vw,3rem);font-weight:800;mar
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:140px}
 .hero small{color:var(--cyan);font-size:1.05rem;margin-bottom:14px}
 .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(3.4rem,13vw,9.5rem);line-height:.92;letter-spacing:-.03em;
-  background:linear-gradient(100deg,#fff 20%,var(--pink) 60%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;
+  background:linear-gradient(100deg,#fff 18%,var(--pink) 58%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;
   background-size:200% 100%;animation:sheen 8s ease-in-out infinite alternate}
 @keyframes sheen{to{background-position:100% 0}}
 .role{font-size:clamp(1.1rem,2.6vw,1.6rem);margin-top:26px;color:var(--mute);min-height:2em}
@@ -45,8 +48,8 @@ h2{font-family:var(--display);font-size:clamp(2rem,5vw,3rem);font-weight:800;mar
 .hero p.lead{max-width:560px;margin-top:10px;color:var(--mute)}
 .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
 .btn{padding:13px 26px;border-radius:999px;font-weight:700;border:1px solid var(--line);transition:transform .2s,box-shadow .2s,background .2s}
-.btn.primary{background:linear-gradient(100deg,var(--pink),#00b8ff);border-color:transparent}
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(61,139,255,.3)}
+.btn.primary{background:linear-gradient(100deg,#7d35d6,var(--pink),#3acbe8);border-color:transparent}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(181,108,255,.3)}
 .btn.ghost:hover{background:rgba(255,255,255,.06)}
 
 /* about */
@@ -62,15 +65,15 @@ h2{font-family:var(--display);font-size:clamp(2rem,5vw,3rem);font-weight:800;mar
 .skill{padding:26px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,var(--bg2),transparent)}
 .skill h3{font-family:var(--display);margin-bottom:16px;font-size:1.15rem}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips i{font-style:normal;font-size:.85rem;padding:5px 12px;border-radius:999px;background:rgba(94,234,255,.08);border:1px solid rgba(94,234,255,.25);transition:.2s}
-.chips i:hover{background:rgba(61,139,255,.18);border-color:var(--pink);transform:translateY(-2px)}
+.chips i{font-style:normal;font-size:.85rem;padding:5px 12px;border-radius:999px;background:rgba(101,230,255,.08);border:1px solid rgba(101,230,255,.25);transition:.2s}
+.chips i:hover{background:rgba(181,108,255,.18);border-color:var(--pink);transform:translateY(-2px)}
 
 /* projects */
 .projects{display:grid;gap:26px}
 .card{--rx:0deg;--ry:0deg;position:relative;padding:34px;border-radius:24px;background:var(--bg2);border:1px solid var(--line);
   transform:perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .15s,border-color .3s;overflow:hidden}
-.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(61,139,255,.16),transparent 60%);opacity:0;transition:opacity .3s}
-.card:hover{border-color:rgba(61,139,255,.5)}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(181,108,255,.16),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover{border-color:rgba(181,108,255,.5)}
 .card:hover::before{opacity:1}
 .card h3{font-family:var(--display);font-size:1.7rem;margin-bottom:6px;position:relative}
 .card .sub{color:var(--cyan);font-size:.95rem;margin-bottom:16px;position:relative}
@@ -284,12 +287,12 @@ function draw(){
     if(p.y<0||p.y>H)p.vy*=-1;
     const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.hypot(dx,dy);
     if(d<140){p.x+=dx/d*1.2;p.y+=dy/d*1.2}
-    ctx.fillStyle='rgba(94,234,255,.7)';
+    ctx.fillStyle='rgba(210,180,255,.8)';
     ctx.beginPath();ctx.arc(p.x,p.y,1.6,0,6.283);ctx.fill();
   }
   for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
     const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-    if(d<120){ctx.strokeStyle=`rgba(61,139,255,${.22*(1-d/120)})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+    if(d<120){ctx.strokeStyle=`rgba(181,108,255,${.22*(1-d/120)})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
   }
   if(!reduce)requestAnimationFrame(draw);
 }
